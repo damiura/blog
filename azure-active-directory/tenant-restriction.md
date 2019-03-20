@@ -17,7 +17,6 @@ tags:
 
 ## テナント制限とは
 
-------
 
 まず、テナント制限とは、 Azure AD に対する認証の通信をプロキシ経由させ、そのプロキシから送信されるデータに、アクセスを許可する Azure AD テナントの情報を付与しておくことで、それ以外の Azure AD テナントへのアクセスをブロックする機能を指しています。
 
@@ -51,11 +50,10 @@ https://blogs.technet.microsoft.com/office365-tech-japan/2017/02/06/tenant-restr
 
 ## よくあるお問い合わせ
 
-------
 
-<font color="DeepSkyBlue">Q</font> : MS アカウントを利用すると、制限の画面が表示されますが、回避策はありませんか？
+Q : MS アカウントを利用すると、制限の画面が表示されますが、回避策はありませんか？
 
-<font color = "red">A</font> : MS アカウントを許可する場合には、以下をテナント制限の許可するリストに追加します。
+A : MS アカウントを許可する場合には、以下をテナント制限の許可するリストに追加します。
 
 ("Restrict-Access-To-Tenants" ヘッダーに含まれるようにします)
 
@@ -69,9 +67,9 @@ MSARealms.onmicrosoft.com
 
  
 
-<font color="DeepSkyBlue">Q</font> : 制限されるのは Office 365 だけですか？
+Q : 制限されるのは Office 365 だけですか？
 
-<font color = "red">A</font>  : いいえ。
+A : いいえ。
 
 以下の認証エンドポイントを使用する、すべてのサービスが制限されます。
 
@@ -91,9 +89,9 @@ login.microsoft.com
 
  
 
-<font color="DeepSkyBlue">Q</font> : (クライアントですが)、テナント制限によってアクセスできないテナントにアクセスできるようにしてほしい。
+Q : (クライアントですが)、テナント制限によってアクセスできないテナントにアクセスできるようにしてほしい。
 
-<font color = "red">A</font> : 接続元のクライアントが利用するプロキシサーバーの設定変更が必要です。
+A : 接続元のクライアントが利用するプロキシサーバーの設定変更が必要です。
 
 プロキシ サーバーを管理している IT 部門へ申請をあげるなどで、テナント制限の許可するリストに該当のテナントを追加してもらってください。
 
@@ -101,9 +99,9 @@ login.microsoft.com
 
  
 
-<font color="DeepSkyBlue">Q</font> : Azure AD 側での設定変更は必要ですか？
+Q : Azure AD 側での設定変更は必要ですか？
 
-<font color = "red">A</font> : いいえ。
+A : いいえ。
 
 プロキシの設定のみで、テナント制限が機能します。
 
@@ -111,19 +109,18 @@ login.microsoft.com
 
  
 
-<font color="DeepSkyBlue">Q</font> : "Restrict-Access-To-Tenants" に、ワイルドカードは利用できますか？
+Q : "Restrict-Access-To-Tenants" に、ワイルドカードは利用できますか？
 
-<font color = "red">A</font> : いいえ。
+A : いいえ。
 
 テナント名かテナント ID を不足なく、入力する必要がございます。
 
  
 
  
+Q : テナント制限で許可をすることができるテナント数に上限はありますか？
 
-<font color="DeepSkyBlue">Q</font> : テナント制限で許可をすることができるテナント数に上限はありますか？
-
-<font color = "red">A</font> : テナント制限にて、許可をするテナント数自体には上限は設けられていません。
+A : テナント制限にて、許可をするテナント数自体には上限は設けられていません。
 
 しかし、ヘッダーの長さの上限 (MaxFieldLength) と、リクエストとヘッダーを含めた合計のサイズの上限 (MaxRequestBytes) があるため、多数のディレクトリを追加する場合、この上限を超えないように注意が必要です。
 
